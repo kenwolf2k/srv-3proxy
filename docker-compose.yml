@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  3proxy:
+    container_name: 3proxy
+#    restart: unless-stopped
+    build:
+      context: ./
+      dockerfile: Dockerfile
+#    image: qautomatron/docker-3proxy:latest
+#    restart: always
+    ports:
+      - 8080:8080
+      - 8128:3128
+    volumes:
+      - ./3proxy.cfg:/etc/3proxy/3proxy.cfg:ro
+      - ./log3proxy:/var/log/

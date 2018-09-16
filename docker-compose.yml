@@ -3,7 +3,7 @@ version: '2'
 services:
   3proxy:
     container_name: 3proxy
-#    restart: unless-stopped
+    restart: unless-stopped
     build:
       context: ./
       dockerfile: Dockerfile
